@@ -18,6 +18,8 @@ Implement the following API for obtaining and releasing a pid:\
 • int allocate map(void)—Creates and initializes a data structure for representing pids; returns −1 if unsuccessful, 1 if successful\
 • int allocate pid(void)—Allocates and returns a pid; returns −1 if unable to allocate a pid (all pids are in use)\
 • void release pid(int pid)—Releases a pid
+# code_explanation Q_3.20
+
 # problem statement Q_3.21
 The Collatz conjecture concerns what happens when we take any positive integer n and apply the following algorithm:\
 n =
