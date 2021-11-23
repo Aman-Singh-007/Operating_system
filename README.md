@@ -18,9 +18,9 @@ the wait() call to wait for the child process to complete before exiting
 the program. Perform necessary error checking to ensure that a positive
 integer is passed on the command line.
 # code_explanation Q_3.21
-1.Enter a integer greater than 0
-2.create a child process using fork system call
-3.if child process creation is failed then return
-4.if child process is created sucessfully run the algorithm for colatz conjecture
-5.in else statement wait for the child process to complete using wait system call.
-6.after successful completion return from parent process.
+1.Enter a integer greater than 0.\
+2.create a child process using fork system call.\
+3.if child process creation is failed then return.\
+4.if child process is created sucessfully run the algorithm for colatz conjecture.\
+5.in else statement wait for the child process to complete using wait system call.\
+6.after successful completion return from parent process.\
