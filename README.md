@@ -19,6 +19,11 @@ Implement the following API for obtaining and releasing a pid:\
 • int allocate pid(void)—Allocates and returns a pid; returns −1 if unable to allocate a pid (all pids are in use)\
 • void release pid(int pid)—Releases a pid
 # code_explanation Q_3.20
+min_pid=300;\
+max_pid=5000;\
+Pid manager length= max_pid-min_pid+1;\
+functions explanation-:\
+1.int allocate_map()-  creates an array with length equals  max_pid-min_pid+1,and initialize each element with 0;
 
 # problem statement Q_3.21
 The Collatz conjecture concerns what happens when we take any positive integer n and apply the following algorithm:\
