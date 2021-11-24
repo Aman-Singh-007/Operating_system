@@ -23,7 +23,11 @@ min_pid=300;\
 max_pid=5000;\
 Pid manager length= max_pid-min_pid+1;\
 functions explanation-:\
-1.int allocate_map()-  creates an array with length equals  max_pid-min_pid+1,and initialize each element with 0;
+1.int allocate_map()-  creates an array with length equals  "max_pid-min_pid+1",and initialize each element with 0;\
+return 1 on successful creation and -1 if failed.\
+2.int allocate_pid()- it checks for the first element in the array which is zero and puts a 1 there meaning the current pid is now in use,after adding a buffer of 300 to the index it returns the value on successful allocation,and returns -1 on faliure.\
+3.void release_pid():- it first ask for a pid which is to be released,if the pid lies beteen min_pid and max_pid it goes and subtract the buffer 300 to get the real index in the array and puts a zero at that index indicating that the given pid is released.\
+In the main fuction we are asking the user to select from different options and perform their task.\
 
 # problem statement Q_3.21
 The Collatz conjecture concerns what happens when we take any positive integer n and apply the following algorithm:\
