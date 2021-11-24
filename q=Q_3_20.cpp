@@ -5,8 +5,8 @@ using namespace std;
         
                  int min_pid=300;
                  int max_pid=5000;
-                int* pids;
-		            bool flag=false;
+                 int* pids;
+		 bool flag=false;
 
                //fuction to creates and initializes a data structure for representing pids; returns −1 if unsuccessful, 1 if successful
                
@@ -21,12 +21,12 @@ using namespace std;
 		  	        if(flag==false)
 			          {
 				              for(int i=0;i<=max_pid-min_pid;i++)
-                           {
-                                pids[i]=0;
-                           }
-                        cout<<"memory allocated successfully"<<endl;
+                                              {
+                                                pids[i]=0;
+                                               }
+                                     cout<<"memory allocated successfully"<<endl;
 			                  flag=true;
-                        return 1;
+                                         return 1;
 			         }
 		          	else 
 			          {
