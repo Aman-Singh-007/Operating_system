@@ -56,3 +56,5 @@ integer is passed on the command line.
 5.in else statement wait for the child process to complete using wait system call.\
 6.after successful completion return from parent process.
 
+# References
+ [(https://github.com/SheldonZhong/OS_practice/tree/master/ch3)]
