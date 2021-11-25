@@ -1,39 +1,40 @@
-#include<iostream>
+include<iostream>
 using namespace std;
 
 
         
                  int min_pid=300;
                  int max_pid=5000;
-                 int* pids;
-		 bool flag=false;
+                int* pids;
+		bool flag=false;
 
                //fuction to creates and initializes a data structure for representing pids; returns −1 if unsuccessful, 1 if successful
                
                int allocate_map()
                 {
-                        pids=new int[max_pid-min_pid+1];	// dynamic memory allocation for PIDS
-                        if(pids==NULL)
-                        {
+			if(flag==false)
+			{
+                          pids=new int[max_pid-min_pid+1];	// dynamic memory allocation for PIDS
+                          if(pids==NULL)
+                          {
                                 cout<<"memory allocation failed"<<endl;
                                 return -1;
-                        }
-		  	        if(flag==false)
-			          {
-				              for(int i=0;i<=max_pid-min_pid;i++)
-                                              {
-                                                pids[i]=0;
-                                               }
-                                     cout<<"memory allocated successfully"<<endl;
-			                  flag=true;
-                                         return 1;
-			         }
-		          	else 
-			          {
-			           	cout<<"memory already allocated"<<endl;
-				          return 1;
-			          }
-		         }
+                          }
+			
+			  for(int i=0;i<=max_pid-min_pid;i++)
+                           {
+                                pids[i]=0;
+			   }
+                        cout<<"memory allocated successfully"<<endl;
+			flag=true;
+                        return 1;
+			}
+			else 
+			{
+				cout<<"memory already allocated"<<endl;
+				return 1;
+			}
+		}
 
 
                 // Allocates and returns a pid; returns −1 if unable to allocate a pid (all pids are in use)
@@ -57,10 +58,10 @@ using namespace std;
                         }
                         if(num==-1)
                         {
-                                cout<<"unable to allocate PID"<<endl;
-                                return 1;
+                                cout<<"unable to allocate"<<endl;
+                                return -1;
                         }
-                        cout<<"allocated pid: "<<num<<endl;
+                        cout<<"allocated pid:"<<num<<endl;
                         return 1;
                 }
 
@@ -70,17 +71,18 @@ using namespace std;
                         if(pids==NULL)
                         {
                                 cout<<"pid manager is not initialized"<<endl;
-                                return ;
+                                return;
                         }
                         if(pid<min_pid||pid>max_pid)
                         {
                                 cout<<"given pid is out of bound"<<endl;
-                                return ;
+                                return;
                         }
                         int newpid=pid-min_pid;
                         if(pids[newpid]==0)
                         {
-                                cout<<"PID"<<" "<<pid<<" is already empty"<<endl;
+                                cout<<"PID"<<" "<<pid<<"is already empty"<<endl;
+
                                 return ;
                         }
                         cout<<"releasing PID: "<<pid<<endl;
@@ -104,14 +106,15 @@ int main()
 		case 'B': allocate_pid();
 			  break;
 		case 'C':int PID;
-	           cout<<"enter PID to be free"<<endl;
-	           cin>>PID;
-	           release_pid(PID);
-	           break;
-	  default :if(pids!=NULL)
-             delete[] pids; //releasing dyanamic memory
-		         return -1;
+	                 cout<<"enter PID to be free"<<endl;
+	                 cin>>PID;
+	                 release_pid(PID);
+	                 break;
+	       default :if(pids!=NULL)
+                        delete[] pids; //releasing dyanamic memory
+		        return -1;
 	}
 	}	
 	
 }
+
